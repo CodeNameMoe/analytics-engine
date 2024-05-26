@@ -8,7 +8,10 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Banknote, Folder, HomeIcon, Settings } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
-import { FaTasks } from 'react-icons/fa'
+import { FaTasks, FaUsers } from 'react-icons/fa'
+import { FaArrowsTurnRight } from "react-icons/fa6";
+import { TiContacts } from "react-icons/ti";
+
 
 export default function DashboardTopNav({ children }: { children: ReactNode }) {
   return (
@@ -29,43 +32,51 @@ export default function DashboardTopNav({ children }: { children: ReactNode }) {
             </SheetHeader>
             <div className="flex flex-col space-y-3 mt-[1rem]">
               <DialogClose asChild>
-                <Link href="/dashboard">
+                <Link href="/organisations">
                   <Button variant="outline" className="w-full">
                     <HomeIcon className="mr-2 h-4 w-4" />
-                    Home
+                    Organisations
                   </Button>
                 </Link>
               </DialogClose>
               <DialogClose asChild>
-                <Link href="/dashboard/projects">
+                <Link href="/content">
                   <Button variant="outline" className="w-full">
                     <Folder className="mr-2 h-4 w-4" />
-                    Projects
+                    Content
                   </Button>
                 </Link>
               </DialogClose>
               <DialogClose asChild>
-                <Link href="/dashboard/kanban">
+                <Link href="/events">
                   <Button variant="outline" className="w-full">
                     <FaTasks className="mr-2 h-4 w-4" />
-                    Kanban
+                    Events
                   </Button>
                 </Link>
               </DialogClose>
               <DialogClose asChild>
-                <Link href="/dashboard/finance">
+                <Link href="/recommendations">
                   <Button variant="outline" className="w-full">
-                    <Banknote className="mr-2 h-4 w-4" />
-                    Finance
+                    <FaArrowsTurnRight className="mr-2 h-4 w-4" />
+                    Recommendations
                   </Button>
                 </Link>
               </DialogClose>
               <Separator className="my-3" />
               <DialogClose asChild>
-                <Link href="/dashboard/settings">
+                <Link href="/contacts">
                   <Button variant="outline" className="w-full">
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
+                    <TiContacts className="mr-2 h-4 w-4" />
+                    Contacts
+                  </Button>
+                </Link>
+              </DialogClose>
+              <DialogClose asChild>
+                <Link href="/users">
+                  <Button variant="outline" className="w-full">
+                    <FaUsers className="mr-2 h-4 w-4" />
+                    Users
                   </Button>
                 </Link>
               </DialogClose>

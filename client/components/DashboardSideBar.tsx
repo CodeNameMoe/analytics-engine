@@ -10,7 +10,9 @@ import {
 } from "lucide-react"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FaTasks } from 'react-icons/fa'
+import { FaTasks, FaUsers } from 'react-icons/fa'
+import { FaArrowsTurnRight } from "react-icons/fa6";
+import { TiContacts } from "react-icons/ti";
 
 export default function DashboardSideBar() {
   const pathname = usePathname();
@@ -65,7 +67,7 @@ export default function DashboardSideBar() {
               href="/recommendations"
             >
               <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
-                <Banknote className="h-3 w-3" />
+                <FaArrowsTurnRight className="h-3 w-3" />
               </div>
               Recommendations
             </Link>
@@ -76,7 +78,7 @@ export default function DashboardSideBar() {
               href="/contacts"
             >
               <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
-                <Banknote className="h-3 w-3" />
+                <TiContacts className="h-3 w-3" />
               </div>
               Contacts
             </Link>
@@ -87,7 +89,7 @@ export default function DashboardSideBar() {
               href="/users"
             >
               <div className="border rounded-lg dark:bg-black dark:border-gray-800 border-gray-400 p-1 bg-white">
-                <Banknote className="h-3 w-3" />
+                <FaUsers className="h-3 w-3" />
               </div>
               Users
             </Link>
