@@ -6,6 +6,8 @@
 - [Endpoints](#endpoints)
   - [Organizations](#organizations)
   - [Content](#content)
+  - [Events](#events)
+    
 - [Future Enhancements](#future-enhancements)
 
 ## Project Overview
@@ -44,6 +46,21 @@ The content endpoints allow users to query and visualize data related to differe
 - **By Creator**:
   - **URL**: `/content/by-creator`
   - **Description**: Returns the count of content items grouped by creator.
+ 
+### Events
+The events endpoints allow users to query and visualize data related to different types of events by various criteria.
+
+- **By Type**:
+  - **URL**: `/events/by-type`
+  - **Description**: Returns the count of events items grouped by content type.
+  
+- **By Location**:
+  - **URL**: `/events/by-location`
+  - **Description**: Returns the count of events items grouped by creator.
+
+ - **By Price**:
+  - **URL**: `/events/by-price`
+  - **Description**: Returns the split between free and paid events.
 
 ## Future Enhancements
 1. **Additional Data Sources**: Integrating more data sources and types, such as relational databases or external APIs, to provide richer and more diverse datasets.
