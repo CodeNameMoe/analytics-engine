@@ -1,5 +1,7 @@
 # Analytics Engine Project
 
+![Analytics Engine Project](client/public/analyticsEngineScreenshot.png)
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
