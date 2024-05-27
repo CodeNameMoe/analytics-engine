@@ -6,9 +6,9 @@ import { getByOrganisation } from '../routeHandlers/contentHandlers/byOrganisati
 
 const router = express.Router();
 
-router.get('/by-type', getByType);
-router.get('/by-creator', getByCreator);
-router.get('/by-publication-date', getByPublicationDate);
-router.get('/by-organisation', getByOrganisation);
+router.get('/by-type', getByType); // not working 
+router.get('/by-creator', getByCreator); // not working
+router.get('/by-publication-date', getByPublicationDate); 
+router.get('/by-organisation', getByOrganisation); // not working
 
 export default router;
