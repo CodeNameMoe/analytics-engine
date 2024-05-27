@@ -29,22 +29,26 @@ const Page = () => {
   const [data, setData] = useState<DataItem[] | IndustryLocationDataItem[]>([]);
   const [selectedReport, setSelectedReport] = useState<string>("");
 
+  const isProduction = process.env.NODE_ENV === 'production';
+  const baseUrl = isProduction ? process.env.NEXT_PUBLIC_API_URL_PRODUCTION : process.env.NEXT_PUBLIC_API_URL_LOCAL;
+
   const handleReportChange = (value: string) => {
     setSelectedReport(value);
 
     let endpoint = "";
+    
     switch (value) {
       case "by Industry":
-        endpoint = "http://localhost:3001/organizations/by-industry";
+        endpoint = `${baseUrl}/organizations/by-industry`;
         break;
       case "by Industry & Location":
-        endpoint = "http://localhost:3001/organizations/by-industry-location";
+        endpoint = `${baseUrl}/organizations/by-industry-location`;
         break;
       case "by Location":
-        endpoint = "http://localhost:3001/organizations/by-location";
+        endpoint = `${baseUrl}/organizations/by-location`;
         break;
       case "By City":
-        endpoint = "http://localhost:3001/organizations/by-city";
+        endpoint = `${baseUrl}/organizations/by-city`;
         break;
       default:
         return;
