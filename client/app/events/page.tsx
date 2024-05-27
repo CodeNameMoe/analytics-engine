@@ -111,7 +111,7 @@ const Page = () => {
           <ResponsiveContainer width="100%" height={500}>
             <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 100 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
+              <XAxis dataKey="name" angle={-45} textAnchor="end" height={150} />
               <YAxis />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
