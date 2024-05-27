@@ -1,14 +1,14 @@
 // byIndustry.js
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { readTSV } from '../helpers/utils.js';
+import { readTSV } from '../../helpers/utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const getByLocation = async (req, res) => {
   try {
-    const filePath = path.join(__dirname, "..", "..", 'data', 'organisations.tsv');
+    const filePath = path.join(__dirname,'..', "..", "..", 'data', 'organisations.tsv');
     const organizations = await readTSV(filePath);
 
     const locationCount = organizations.reduce((acc, org) => {
