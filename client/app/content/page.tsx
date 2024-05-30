@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 
 import { useState, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, Text } from "recharts";
 
 interface DataItem {
   name: string;
@@ -46,6 +46,16 @@ const Page = () => {
     }
   };
 
+  const CustomXAxisTick = (props: any) => {
+    const { x, y, payload } = props;
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text x={0} y={0} dy={16} textAnchor="end" fill="#666" transform="rotate(-45)">
+          {payload.value}
+        </text>
+      </g>
+    );
+  };
 
   const getXAxisKey = () => {
     return "name";
@@ -77,7 +87,7 @@ const Page = () => {
         <ResponsiveContainer width="80%" height={400}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey={getXAxisKey()} />
+            <XAxis dataKey={getXAxisKey()} tick={<CustomXAxisTick />} height={120} />
             <YAxis />
             <Tooltip />
             <Legend />
